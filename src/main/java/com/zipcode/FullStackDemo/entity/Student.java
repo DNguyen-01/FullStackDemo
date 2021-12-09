@@ -32,10 +32,6 @@ public class Student {
         this.firstName = firstName;
         this.lastName = lastName;
         this.cohort = cohort;
-    }    
-
-    public Long getID() {
-        return id;
     }
 
     public Long getId() {
