@@ -1,0 +1,68 @@
+.App {
+  text-align: center;
+}
+
+.container, .container-fluid {
+  margin-top: 2rem;
+  display: inline-block;
+}
+
+.link {
+  text-decoration: none;
+
+  &__white-text {
+    color: white;
+    &:hover {
+      color: white;
+    }
+  }
+
+  &__black-text {
+    color: black;
+    &:hover {
+      color: black;
+
+    }
+  }
+}
+
+//.home-link {
+//  text-decoration: none;
+//  color: white;
+//
+//  &:hover {
+//    color: white;
+//  }
+//}
+//
+//.info-link {
+//  text-decoration: none;
+//  color: black;
+//
+//  &:hover {
+//    color: black;
+//  }
+//}
+//
+//.red-link {
+//  text-decoration: none;
+//  color: white;
+//
+//  &:hover {
+//    color: white;
+//  }
+//}
+//
+//.green-link {
+//  text-decoration: none;
+//  color: white;
+//
+//  &:hover {
+//    color: white;
+//  }
+//}
+
+.add-button {
+  display: flex;
+  justify-content: flex-end;
+}

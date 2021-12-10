@@ -1,0 +1,29 @@
+.App {
+  text-align: center;
+}
+
+.container, .container-fluid {
+  margin-top: 2rem;
+  display: inline-block;
+}
+
+.link {
+  text-decoration: none;
+}
+  .link__white-text {
+    color: white;
+  }
+    .link__white-text:hover {
+      color: white;
+    }
+  .link__black-text {
+    color: black;
+  }
+    .link__black-text:hover {
+      color: black;
+    }
+
+.add-button {
+  display: flex;
+  justify-content: flex-end;
+}
