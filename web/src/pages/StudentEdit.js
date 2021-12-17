@@ -21,6 +21,7 @@ class StudentEdit extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
       }
     
+      // If the param id is not new, we fetch the student by the id and save them into the state
       async componentDidMount() {
         if (this.props.match.params.id !== 'new') {
           const student = await (await fetch(`/students/${this.props.match.params.id}`)).json();
@@ -28,6 +29,12 @@ class StudentEdit extends Component {
         }
       }
 
+      // Our components are controlled, which means the values are controlled by React
+      // and we storte them in state with event-based callbacks like handleChange.
+      // Uncontrolled components are handled by the DOm itself and work just like an HTML input form element,
+      // like what Drake mentioned : )
+      // Here, we are taking the values of the form elements entered by the user and saving it
+      // into the appropriate variable i.e. firstName....
       handleChange(event) {
         const target = event.target;
         const value = target.value;
@@ -38,9 +45,12 @@ class StudentEdit extends Component {
       }
     
       async handleSubmit(event) {
+        // Prevents the page from reloading on submit
         event.preventDefault();
         const {item} = this.state;
     
+        // ternary operator checking for an id and appending it to the fetch url if necessary
+        // the same is done with the method type to determine if PUT or POST is needed
         await fetch('/students' + (item.id ? '/' + item.id : ''), {
           method: (item.id) ? 'PUT' : 'POST',
           headers: {
@@ -49,13 +59,15 @@ class StudentEdit extends Component {
           },
           body: JSON.stringify(item),
         });
+        // this takes us back to the studentList page and clears the form
         this.props.history.push('/students');
         this.setState({item: this.emptyItem});
       }
 
       render() {
         const {item} = this.state;
-        const title = <h2>{item.id && true ? 'Edit Student' : 'Add Student'}</h2>;
+        // controls what is displayed depending on whether or not an id is present
+        const title = <h2>{item.id ? 'Edit Student' : 'Add Student'}</h2>;
     
         return <div>
           <Navigation/>

@@ -17,6 +17,8 @@ class App extends Component {
     return (
       <div className="App">
         <Switch>
+          {/* These routes connect to the brwoser router and create the illusion of different pages when in fact
+          this is an SPA, single page application. */}
           <Route path='/' exact={true} component={Home} />
           <Route path='/students' exact={true} component={StudentList} />
           <Route path='/students/:id' exact={true} component={StudentEdit} />
